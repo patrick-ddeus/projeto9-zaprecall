@@ -15,8 +15,10 @@ export const FadeIn = styled(baseAnimation)`
 `;
 
 export const Container = styled.div`
-  max-width:80%;
-  margin:0 auto;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items:center;
 `;
 
 export const Title = styled.div`
@@ -25,6 +27,7 @@ export const Title = styled.div`
     justify-content: center;
     gap:20px;
     margin-top:48px;
+    margin-bottom:20px;
 
     img{
         width:52px;
@@ -36,4 +39,10 @@ export const Title = styled.div`
         font-size:36px;
         color:white;
     }
+`;
+
+export const CardContainer = styled.div`
+  display:flex;
+  flex-direction: column;
+  gap:20px;
 `;
