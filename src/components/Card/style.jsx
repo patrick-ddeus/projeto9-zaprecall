@@ -23,3 +23,8 @@ export const Container = styled.div`
         cursor:pointer;
     }
 `;
+
+export const WordSpan = styled.span`
+  text-decoration: ${({resultado}) => resultado ? "line-through" : "normal"};
+  color:${({resultado}) => colors[resultado]}
+`;

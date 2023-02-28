@@ -12,7 +12,6 @@ export default function CardFlicked ({indice, question, answer}) {
     function handleButtonClick(valueResult){
         setResultado(valueResult)
         setStep((previousState) => previousState + 1)
-        console.log(step)
     }
 
     return (step === 1 ?

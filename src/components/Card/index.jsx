@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container } from './style';
 import Play from "../../assets/seta_play.png";
 import icons from '../../constants/icons';
+
+import { Container, WordSpan} from './style';
 
 export default function Card ({ indice, question, setQuestion, ending, resultado }) {
     function handlePlayClick () {
@@ -12,7 +13,7 @@ export default function Card ({ indice, question, setQuestion, ending, resultado
 
     return (
         <Container>
-            Pergunta {indice + 1}
+            <WordSpan resultado={resultado}>Pergunta {indice + 1}</WordSpan>
             {ending ?
             <img src={icons[resultado]} alt="" style={{width:"25px",cursor:"auto"}}/> : 
             <img src={Play} alt="" onClick={handlePlayClick} />}
