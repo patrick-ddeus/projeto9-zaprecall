@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import baseAnimation from "../../constants/baseAnimation"
+import baseAnimation from "../../constants/baseAnimation";
 
 const fadeIn = keyframes`
     from{
@@ -8,7 +8,7 @@ const fadeIn = keyframes`
     to{
         opacity:1;
     }
-`
+`;
 
 export const FadeIn = styled(baseAnimation)`
   animation-name: ${fadeIn};
@@ -45,4 +45,19 @@ export const CardContainer = styled.div`
   display:flex;
   flex-direction: column;
   gap:20px;
+`;
+
+export const Footer = styled.footer`
+  width:100%;
+  height:70px;
+  line-height:70px;
+  background-color: white;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+  text-align:center;
+  margin-top:46px;
+
+  font-family: 'Recursive';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
 `;

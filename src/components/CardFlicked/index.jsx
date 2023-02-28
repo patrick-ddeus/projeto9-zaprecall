@@ -1,26 +1,35 @@
 import React from 'react';
+import Card from '../Card';
 import Virar from "../../assets/Virar.svg";
-import Button from "../Button";
 import colors from '../../constants/colors';
 
-import { Container, ButtonContainer} from './styles';
+import { Container, ButtonContainer, ButtonWrapper} from './styles';
 
-export default function CardFlicked ({ question, answer }) {
+export default function CardFlicked ({indice, question, answer}) {
     const [step, setStep] = React.useState(1);
+    const [resultado, setResultado] = React.useState("");
+
+    function handleButtonClick(valueResult){
+        setResultado(valueResult)
+        setStep((previousState) => previousState + 1)
+        console.log(step)
+    }
 
     return (step === 1 ?
         <Container>
             {question}
             <img src={Virar} alt="" onClick={() => setStep((previousState) => previousState + 1)} />
         </Container>
-        :
+        : step === 2 ?
         <Container>
             {answer}
             <ButtonContainer>
-                <Button color={colors.danger}>Não lembrei</Button>
-                <Button color={colors.warning}>Quase não lembrei</Button>
-                <Button color={colors.success}>Zap!</Button>
+                <ButtonWrapper onClick={() => handleButtonClick("danger")} color={colors.danger}>Não lembrei</ButtonWrapper>
+                <ButtonWrapper onClick={() => handleButtonClick("warning")} color={colors.warning}>Quase não lembrei</ButtonWrapper>
+                <ButtonWrapper onClick={() => handleButtonClick("success")} color={colors.success}>Zap!</ButtonWrapper>
             </ButtonContainer>
         </Container>
+        :
+         <Card indice={indice} ending={true} resultado={resultado}></Card> 
     );
 }
