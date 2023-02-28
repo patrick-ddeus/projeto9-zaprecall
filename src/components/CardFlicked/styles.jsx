@@ -24,3 +24,11 @@ export const Container = styled.div`
     }
 
 `;
+
+export const ButtonContainer = styled.div`
+    height:calc(100% - 45px);
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap:10px;
+`;
