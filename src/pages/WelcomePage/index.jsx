@@ -7,7 +7,7 @@ export default function WelcomePage ({ setLogin }) {
             <Container>
                 <img src={Logo} alt="" />
                 <h2>ZapRecall</h2>
-                <ButtonStart onClick={() => setLogin((previousState) => !previousState)}>Iniciar Recall!</ButtonStart>
+                <ButtonStart onClick={() => setLogin((previousState) => !previousState)} data-test="start-btn">Iniciar Recall!</ButtonStart>
             </Container>
         </SlideDown>
     );

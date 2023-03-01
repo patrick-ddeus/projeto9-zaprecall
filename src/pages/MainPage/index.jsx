@@ -2,13 +2,18 @@ import React from 'react';
 import Logo from "../../assets/logo.png";
 import Card from '../../components/Card';
 import CardFlicked from '../../components/CardFlicked';
+import ResultMessage from '../../components/ResultMessage';
 import CardsData from "../../data/cardData";
+import Party from "../../assets/party.png"
+import Sad from "../../assets/sad.png"
 
 import * as S from './styles';
 export default function MainPage () {
   const [question, setQuestion] = React.useState([]);
   const [doneQuestions, setDoneQuestions] = React.useState(0);
   const [doneIcons, setDoneIcons] = React.useState([]);
+
+  const existingDanger = doneIcons.find(icon => icon.name === "danger");
 
   return (
     <S.FadeIn duration="2s">
@@ -36,13 +41,28 @@ export default function MainPage () {
 
       </S.Container>
 
-      <S.Footer>
+      <S.Footer data-test="footer">
+        {
+         (doneQuestions === CardsData.length) ?
+         existingDanger ? 
+
+         <ResultMessage 
+         emoji={Sad} 
+         happy={false} 
+         message={"Ainda faltam alguns... Mas não desanime!"}/> :
+
+         <ResultMessage 
+         emoji={Party} 
+         happy={true} 
+         message={"Você não esqueceu de nenhum flashcard!"}/>  : ""
+        }
+         <br/>
         {`${doneQuestions}/${CardsData.length} Concluídos`}
-        <S.IconsWrapper>
-          {doneIcons.map(iconsSrc => (
-            <img src={iconsSrc} alt="Algo"></img>
+        <div>
+          {doneIcons.map((icons, index) => (
+            <img key={index} src={icons.src} alt="Algo" data-test={icons.name === "success" ? "zap-icon" : icons.name === "danger" ? "no-icon" : "partial-icon"}/>
           ))}
-        </S.IconsWrapper>
+        </div>
       </S.Footer>
     </S.FadeIn>
   );

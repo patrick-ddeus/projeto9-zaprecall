@@ -62,7 +62,7 @@ export const CardContainer = styled.div`
 
 export const Footer = styled.footer`
   width:100%;
-  height:70px;
+  padding:15px;
   background-color: white;
   box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
   text-align:center;
@@ -84,8 +84,4 @@ export const Footer = styled.footer`
     display:inline;
     margin:0 2px;
   }
-`;
-
-export const IconsWrapper = styled.div`
-  
 `;

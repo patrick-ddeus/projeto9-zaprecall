@@ -14,22 +14,22 @@ export default function CardFlicked ({doneIcons, setDoneIcons, setDoneQuestions,
         setResultado(valueResult);
         setStep((previousState) => previousState + 1);
         setDoneQuestions((previousState) => previousState + 1)
-        setDoneIcons([...doneIcons, icons[valueResult]])
+        setDoneIcons([...doneIcons, {src: icons[valueResult], name:valueResult}])
     }
 
     return (step === 1 ?
         <Container>
-            {question}
-            <img src={Virar} alt="" onClick={() => setStep((previousState) => previousState + 1)} />
+            <span data-test="flashcard-text">{question}</span>
+            <img src={Virar} alt="" onClick={() => setStep((previousState) => previousState + 1)} data-test="turn-btn" />
         </Container>
         : step === 2 ?
             <Flicker >
                 <Container>
-                    {answer}
+                <span data-test="flashcard-text">{answer}</span>
                     <ButtonContainer>
-                        <ButtonWrapper onClick={() => handleButtonClick("danger")} color={colors.danger}>Não lembrei</ButtonWrapper>
-                        <ButtonWrapper onClick={() => handleButtonClick("warning")} color={colors.warning}>Quase não lembrei</ButtonWrapper>
-                        <ButtonWrapper onClick={() => handleButtonClick("success")} color={colors.success}>Zap!</ButtonWrapper>
+                        <ButtonWrapper data-test="no-btn" onClick={() => handleButtonClick("danger")} color={colors.danger}>Não lembrei</ButtonWrapper>
+                        <ButtonWrapper data-test="partial-btn" onClick={() => handleButtonClick("warning")} color={colors.warning}>Quase não lembrei</ButtonWrapper>
+                        <ButtonWrapper data-test="zap-btn" onClick={() => handleButtonClick("success")} color={colors.success}>Zap!</ButtonWrapper>
                     </ButtonContainer>
                 </Container>
             </Flicker>
