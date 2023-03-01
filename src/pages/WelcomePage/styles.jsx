@@ -11,8 +11,26 @@ const slideDown = keyframes`
     }
 `
 
+const wooble = keyframes`
+ 0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+`
+
 export const SlideDown = styled(baseAnimation)`
   animation-name: ${slideDown};
+`;
+
+export const Wooble = styled(baseAnimation)`
+  animation-name: ${wooble};
 `;
 
 export const Container = styled.div`
