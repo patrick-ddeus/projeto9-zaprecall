@@ -63,16 +63,29 @@ export const CardContainer = styled.div`
 export const Footer = styled.footer`
   width:100%;
   height:70px;
-  line-height:70px;
   background-color: white;
   box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
   text-align:center;
   margin-top:46px;
   position:sticky;
   bottom:0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap:5px;
 
   font-family: 'Recursive';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
+
+  img{
+    display:inline;
+    margin:0 2px;
+  }
+`;
+
+export const IconsWrapper = styled.div`
+  
 `;

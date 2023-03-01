@@ -2,10 +2,11 @@ import React from 'react';
 import Card from '../Card';
 import Virar from "../../assets/Virar.svg";
 import colors from '../../constants/colors';
+import icons from '../../constants/icons';
 
 import { Container, ButtonContainer, ButtonWrapper, Flicker } from './styles';
 
-export default function CardFlicked ({ setDoneQuestions, indice, question, answer }) {
+export default function CardFlicked ({doneIcons, setDoneIcons, setDoneQuestions, indice, question, answer }) {
     const [step, setStep] = React.useState(1);
     const [resultado, setResultado] = React.useState("");
 
@@ -13,6 +14,7 @@ export default function CardFlicked ({ setDoneQuestions, indice, question, answe
         setResultado(valueResult);
         setStep((previousState) => previousState + 1);
         setDoneQuestions((previousState) => previousState + 1)
+        setDoneIcons([...doneIcons, icons[valueResult]])
     }
 
     return (step === 1 ?
