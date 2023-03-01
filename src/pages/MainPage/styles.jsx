@@ -10,8 +10,21 @@ const fadeIn = keyframes`
     }
 `;
 
+const flicker = keyframes`
+  from{
+    transform: rotateY(-180deg);
+  }
+  to{
+    transform:rotateY(0)
+  }
+`
+
 export const FadeIn = styled(baseAnimation)`
   animation-name: ${fadeIn};
+`;
+
+export const Flicker = styled(baseAnimation)`
+  animation-name: ${flicker};
 `;
 
 export const Container = styled.div`
@@ -55,6 +68,8 @@ export const Footer = styled.footer`
   box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
   text-align:center;
   margin-top:46px;
+  position:sticky;
+  bottom:0;
 
   font-family: 'Recursive';
   font-style: normal;
