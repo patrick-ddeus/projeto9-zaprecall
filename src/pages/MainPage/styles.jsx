@@ -28,10 +28,18 @@ export const Flicker = styled(baseAnimation)`
 `;
 
 export const Container = styled.div`
-  display:flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items:center;
+transition:opacity .4s ease;
+  ${({login}) => login ? `
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+    opacity:1;
+  ` : `
+    opacity:0;
+    position:fixed;
+  `}
+
 `;
 
 export const Title = styled.div`

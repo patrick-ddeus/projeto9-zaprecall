@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, ButtonStart, SlideDown, Wooble } from './styles';
 import Logo from "../../assets/logo.png";
-export default function WelcomePage ({ setLogin }) {
+export default function WelcomePage ({ login, setLogin }) {
     return (
         <SlideDown duration="1s">
-            <Container>
+            <Container login={login}>
                 <Wooble duration="2s" iterationCount="infinite">
                     <img src={Logo} alt="" />
                 </Wooble>

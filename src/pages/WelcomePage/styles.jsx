@@ -34,23 +34,30 @@ export const Wooble = styled(baseAnimation)`
 `;
 
 export const Container = styled.div`
-  height:80vh;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap:30px;
 
-  img{
-    width:136px;
-  }
+  ${({ login }) => !login ? `
+    height:80vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:30px;
 
-  h2{
-    font-family: "Righteous", sans-serif;
-    font-size:36px;
-    font-weight:400;
-    color:white;
-  }
+    img{
+      width:136px;
+    }
+
+    h2{
+      font-family: "Righteous", sans-serif;
+      font-size:36px;
+      font-weight:400;
+      color:white;
+    }
+  ` : `
+    opacity:0;
+    position:fixed;
+    z-index:-1;
+  `}
 `;
 
 export const ButtonStart = styled.button`

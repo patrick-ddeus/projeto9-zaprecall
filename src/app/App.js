@@ -5,11 +5,11 @@ import MainPage from '../pages/MainPage'
 
 export default function App() {
   const [login, setLogin] = React.useState(false)
-
   return (
     <>
       <GlobalStyle />
-      {!login ? <WelcomePage setLogin={setLogin}/> : <MainPage />}
+      <WelcomePage login={login} setLogin={setLogin}/>
+      <MainPage login={login}/>
     </>
   )
 }
