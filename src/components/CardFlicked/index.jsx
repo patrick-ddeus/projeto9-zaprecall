@@ -23,7 +23,6 @@ export default function CardFlicked ({doneIcons, setDoneIcons, setDoneQuestions,
             <img src={Virar} alt="" onClick={() => setStep((previousState) => previousState + 1)} data-test="turn-btn" />
         </Container>
         : step === 2 ?
-            <Flicker >
                 <Container>
                 <span data-test="flashcard-text">{answer}</span>
                     <ButtonContainer>
@@ -32,7 +31,6 @@ export default function CardFlicked ({doneIcons, setDoneIcons, setDoneQuestions,
                         <ButtonWrapper data-test="zap-btn" onClick={() => handleButtonClick("success")} color={colors.success}>Zap!</ButtonWrapper>
                     </ButtonContainer>
                 </Container>
-            </Flicker>
             :
             <Card indice={indice} ending={true} resultado={resultado}></Card>
     );

@@ -16,7 +16,7 @@ export default function MainPage ({ login }) {
   const existingDanger = doneIcons.find(icon => icon.name === "danger");
 
   return (
-    <S.FadeIn duration="2s">
+    
       <S.Container login={login}>
 
         <S.Title>
@@ -62,8 +62,5 @@ export default function MainPage ({ login }) {
           </div>
         </S.Footer>
       </S.Container>
-
-
-    </S.FadeIn>
   );
 }
