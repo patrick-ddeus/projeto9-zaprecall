@@ -18,12 +18,12 @@ export default function CardFlicked ({doneIcons, setDoneIcons, setDoneQuestions,
     }
 
     return (step === 1 ?
-        <Container>
+        <Container data-test="flashcard">
             <span data-test="flashcard-text">{question}</span>
             <img src={Virar} alt="" onClick={() => setStep((previousState) => previousState + 1)} data-test="turn-btn" />
         </Container>
         : step === 2 ?
-                <Container>
+                <Container data-test="flashcard">
                 <span data-test="flashcard-text">{answer}</span>
                     <ButtonContainer>
                         <ButtonWrapper data-test="no-btn" onClick={() => handleButtonClick("danger")} color={colors.danger}>Não lembrei</ButtonWrapper>
