@@ -4,7 +4,7 @@ import Virar from "../../assets/Virar.svg";
 import colors from '../../constants/colors';
 import icons from '../../constants/icons';
 
-import { Container, ButtonContainer, ButtonWrapper, Flicker } from './styles';
+import { Container, ButtonContainer, ButtonWrapper } from './styles';
 
 export default function CardFlicked ({doneIcons, setDoneIcons, setDoneQuestions, indice, question, answer }) {
     const [step, setStep] = React.useState(1);
@@ -14,7 +14,7 @@ export default function CardFlicked ({doneIcons, setDoneIcons, setDoneQuestions,
         setResultado(valueResult);
         setStep((previousState) => previousState + 1);
         setDoneQuestions((previousState) => previousState + 1)
-        setDoneIcons([...doneIcons, {src: icons[valueResult], name:valueResult}])
+        setDoneIcons([...doneIcons, icons[valueResult]])
     }
 
     return (step === 1 ?
