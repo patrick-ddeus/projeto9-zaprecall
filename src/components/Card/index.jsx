@@ -15,7 +15,7 @@ export default function Card ({ indice, question, setQuestion, ending, resultado
         <Container data-test="flashcard">
             <WordSpan resultado={resultado} data-test="flashcard-text">Pergunta {indice + 1}</WordSpan>
             {ending ?
-            <img src={icons[resultado]} data-test={resultado === "success" ? "zap-icon" : resultado === "danger" ? "no-icon" : "partial-icon"} alt="" style={{width:"25px",cursor:"auto"}}/> : 
+            <img src={icons[resultado].src} data-test={icons[resultado].dataTest} alt="" style={{width:"25px",cursor:"auto"}}/> : 
             <img src={Play} alt="" onClick={handlePlayClick} data-test="play-btn"/>}
         </Container>
     );

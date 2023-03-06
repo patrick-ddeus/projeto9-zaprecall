@@ -13,17 +13,17 @@ export default function CardFlicked ({ doneIcons, setDoneIcons, setDoneQuestions
     function handleButtonClick (valueResult) {
         setResultado(valueResult);
         setStep((previousState) => previousState + 1);
-        setDoneQuestions((previousState) => previousState + 1);
-        setDoneIcons([...doneIcons, { src: icons[valueResult], name: valueResult }]);
+        setDoneQuestions((previousState) => previousState + 1)
+        setDoneIcons([...doneIcons, icons[valueResult]])
     }
 
     return (step === 1 ?
-        <Container>
-            <span data-test="flashcard-text">{step === 1 ? question : answer}</span>
+        <Container data-test="flashcard">
+            <span data-test="flashcard-text">{question}</span>
             <img src={Virar} alt="" onClick={() => setStep((previousState) => previousState + 1)} data-test="turn-btn" />
         </Container>
         : step === 2 ?
-            <Container>
+                <Container data-test="flashcard">
                 <span data-test="flashcard-text">{answer}</span>
                 <ButtonContainer>
                     <ButtonWrapper data-test="no-btn" onClick={() => handleButtonClick("danger")} color={colors.danger}>Não lembrei</ButtonWrapper>
