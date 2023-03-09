@@ -13,15 +13,15 @@ export default function WelcomePage ({ login, setLogin, select, setSelect }) {
 
     function handleOptionClick (e) {
         toggleModal();
-        setSelect(e.currentTarget.value);
-        setButtonValue(e.currentTarget.value);
+        setSelect(e.currentTarget.innerText);
+        setButtonValue(e.currentTarget.innerText);
     }
 
-    function handleStartRecall(){
-        if(buttonValue !== select){
-           return alert("Selecione um tema!")
+    function handleStartRecall () {
+        if (buttonValue !== select) {
+            return alert("Selecione um tema!");
         }
-        setLogin((previousState) => !previousState)
+        setLogin((previousState) => !previousState);
     }
 
     return (
@@ -36,9 +36,9 @@ export default function WelcomePage ({ login, setLogin, select, setSelect }) {
                     <Fade onClick={toggleModal}>
                         <Modal value={select} >
                             {Object.keys(Options).map(optionValue => (
-                                <option
-                                    onClick={(e) => handleOptionClick(e)}
-                                    value={optionValue}>{optionValue}</option>
+                                <div onClick={(e) => handleOptionClick(e)}>
+                                    {optionValue}
+                                </div>
                             ))}
                         </Modal>
                     </Fade>

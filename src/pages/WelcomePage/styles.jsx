@@ -134,7 +134,7 @@ export const Modal = styled(baseAnimation)`
   animation-name: ${modalShow};
   overflow:hidden;
 
-  option{
+  div{
     padding:20px;
     font-size:18px;
     font-weight:400;
