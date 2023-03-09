@@ -31,4 +31,10 @@ const questions = {
 	]
 };
 
-export default questions;
+const choices = {
+	"ReactJs": questions.default,
+	"Naruto": questions.naruto,
+	"Dragon Ball": questions.dragonball
+}
+
+export default choices;

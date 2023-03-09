@@ -6,8 +6,8 @@ import * as S from './styles'
 
 export default function ResultMessage({message, happy}) {
   return (
-    <div data-test="finish-text">
-        <S.CongratContainer>
+    <div>
+        <S.CongratContainer data-test="finish-text">
             <img src={happy ? Party : Sad} alt="" />
             {happy ? "Parabéns" : "Putz..."}
         </S.CongratContainer>
